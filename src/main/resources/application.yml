@@ -1,0 +1,16 @@
+logging:
+  config: classpath:logback-spring.xml
+  path: /home/hole/logs
+
+server:
+  port: 7005
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://xxxx/hole_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
