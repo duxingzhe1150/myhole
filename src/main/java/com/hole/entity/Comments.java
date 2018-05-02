@@ -18,7 +18,7 @@ import java.util.Date;
 public class Comments {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;  //评论id
 
     private Integer userId;  //评论者id

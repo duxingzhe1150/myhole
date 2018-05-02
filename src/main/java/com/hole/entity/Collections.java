@@ -18,7 +18,7 @@ import java.util.Date;
 public class Collections {
 
     @Id()
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;  //收藏id
 
     private Integer secretId;  //秘密id

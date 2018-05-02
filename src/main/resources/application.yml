@@ -3,13 +3,13 @@ logging:
   path: /home/hole/logs
 
 server:
-  port: 7005
+  port: 80
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://xxxx/hole_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://39.106.174.56/hole_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: root
+    password: 123@PHz3gqLN3g
   jpa:
     hibernate:
       ddl-auto: update

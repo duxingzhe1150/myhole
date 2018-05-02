@@ -19,7 +19,7 @@ import java.util.Date;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;  //用户id
 
     @Column(length = 50)

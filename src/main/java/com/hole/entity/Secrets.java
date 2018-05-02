@@ -18,7 +18,7 @@ import java.util.Date;
 public class Secrets {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;  //秘密id
 
     private Integer userId;  //用户id

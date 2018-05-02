@@ -18,7 +18,7 @@ import java.util.Date;
 public class Likes {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;  //赞id
 
     private Integer secretId;  //秘密id
