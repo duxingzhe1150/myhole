@@ -3,10 +3,10 @@ package com.hole.config;
 /**
  * @Author wangcj
  * @date 2018/5/4 11:02
- * @desc 存放静态配置信息
+ * @desc 存放微信静态配置信息
  * @since 1.0
  */
-public class Config {
+public class WeiXinConfig {
 
     public static class AppConfig {
 
