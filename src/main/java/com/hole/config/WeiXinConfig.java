@@ -16,4 +16,10 @@ public class WeiXinConfig {
 
     }
 
+    //微信API配置
+    public static class WeiXinApi{
+
+        public static final String LOGIN_API = "https://api.weixin.qq.com/sns/jscode2session?appid=wxea30003bd18c17e7&secret=649413a99959f419b6b2f0b808605d96&grant_type=authorization_code&js_code=";
+    }
+
 }

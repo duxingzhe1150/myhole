@@ -1,8 +1,11 @@
 package com.hole.controller;
 
+import com.google.gson.JsonObject;
+import com.hole.config.WeiXinConfig;
 import com.hole.entity.Resp;
 import com.hole.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,13 +36,10 @@ public class HomeController {
     @RequestMapping("login")
     public Resp login(String code){
 
-        System.out.println(code);
-
-        Map<String,String> result = new HashMap<>();
+        ResponseEntity<String> resp = restTemplate.getForEntity(WeiXinConfig.WeiXinApi.LOGIN_API+code, String.class);
 
 
-
-        return Resp.success(result);
+        return Resp.success(resp);
     }
 
 
