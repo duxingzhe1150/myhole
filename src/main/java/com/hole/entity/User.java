@@ -52,6 +52,15 @@ public class User {
     @Column(length = 100)
     private String recentlyLocation;  //最近位置
 
+    @Column(length = 50)
+    private String city;  //用户所在城市
+
+    @Column(length = 50)
+    private String province;  //用户所在省份
+
+    @Column(length = 50)
+    private String country;  //用户所在国家
+
     @Override
     public String toString() {
         return "User{" +
@@ -66,6 +75,9 @@ public class User {
                 ", registration=" + registration +
                 ", recentlyLogged=" + recentlyLogged +
                 ", recentlyLocation='" + recentlyLocation + '\'' +
+                ", city='" + city + '\'' +
+                ", province='" + province + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 }
