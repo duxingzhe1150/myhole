@@ -35,6 +35,7 @@ public class WebControllerAOP {
 
     @Around("executeService()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
+        Long start=System.currentTimeMillis();
         RequestAttributes ra = RequestContextHolder.getRequestAttributes();
         ServletRequestAttributes sra = (ServletRequestAttributes) ra;
         HttpServletRequest request = sra.getRequest();
@@ -45,13 +46,15 @@ public class WebControllerAOP {
         String url = request.getRequestURL().toString();
         String method = request.getMethod();
         String uri = request.getRequestURI();
-        String queryString = request.getQueryString();
         logger.info("请求开始, 各个参数, ip:{}, url: {}, method: {}, uri: {}",request.getRemoteAddr(), url, method, uri);
 
-        logger.info("参数列表："+Arrays.toString(args));
+        logger.info("参数列表：{}" , Arrays.toString(args));
 
         Object result = pjp.proceed();
-        logger.info("请求结束，controller的返回值是 " + gson.toJson(result));
+        Long end=System.currentTimeMillis();
+
+        Long total = end-start;
+        logger.info("请求结束，controller的返回值是:{},请求耗时：{}" , gson.toJson(result) , total);
         return result;
     }
 
