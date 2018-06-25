@@ -22,4 +22,12 @@ public class WeiXinConfig {
         public static final String LOGIN_API = "https://api.weixin.qq.com/sns/jscode2session?appid=wxea30003bd18c17e7&secret=649413a99959f419b6b2f0b808605d96&grant_type=authorization_code&js_code=";
     }
 
+    //用户状态配置
+    public static class UserStatus{
+
+        public static final Integer ON_LINE = 1;
+
+        public static final Integer PRE_OFF_LINE = 2;
+    }
+
 }

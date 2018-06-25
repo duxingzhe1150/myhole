@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import com.hole.config.WeiXinConfig;
 import com.hole.entity.Resp;
 import com.hole.entity.User;
+import com.hole.service.SecretsService;
+import com.hole.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +26,10 @@ import java.util.Map;
 @RequestMapping("/home")
 public class HomeController {
     @Autowired
-    private RestTemplate restTemplate;
+    private UserService userService;
+
+    @Autowired
+    private SecretsService secretsService;
 
     @RequestMapping("register")
     public void register(@RequestBody User user){
@@ -36,10 +41,13 @@ public class HomeController {
     @RequestMapping("login")
     public Resp login(String code){
 
-        ResponseEntity<String> resp = restTemplate.getForEntity(WeiXinConfig.WeiXinApi.LOGIN_API+code, String.class);
+        return userService.autoRegister(code);
+    }
 
+    @RequestMapping("index")
+    public Resp home(){
 
-        return Resp.success(resp);
+        return secretsService.getHomeList();
     }
 
 
