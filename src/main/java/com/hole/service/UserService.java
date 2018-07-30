@@ -50,10 +50,10 @@ public class UserService {
             user = userDao.save(user);
         }
 
-        CacheConfig.sessionMap.put(weiXinLogin.getSession_key(),user);
-        CacheConfig.sessionHeart.put(weiXinLogin.getSession_key(),WeiXinConfig.UserStatus.ON_LINE);
+//        CacheConfig.sessionMap.put(weiXinLogin.getSession_key(),user);
+//        CacheConfig.sessionHeart.put(weiXinLogin.getSession_key(),WeiXinConfig.UserStatus.ON_LINE);
 
 
-        return Resp.success(result);
+        return Resp.success(user.getId());
     }
 }

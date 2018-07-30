@@ -30,4 +30,10 @@ public class WeiXinConfig {
         public static final Integer PRE_OFF_LINE = 2;
     }
 
+    public static class IsDel{
+        public static final Integer YES = 1;
+
+        public static final Integer NO = 0;
+    }
+
 }

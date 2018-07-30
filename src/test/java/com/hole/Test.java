@@ -1,5 +1,12 @@
 package com.hole;
 
+import com.google.gson.JsonObject;
+import com.hole.entity.User;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Author wangtt
  * @date 2018/4/26 14:46
@@ -11,8 +18,9 @@ public class Test {
     static  double d;
 
     public static void main(String[] args) {
-        double dd=0D;
 
-        System.out.println(d);
+
+
+
     }
 }

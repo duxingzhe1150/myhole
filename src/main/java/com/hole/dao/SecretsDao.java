@@ -15,4 +15,6 @@ public interface SecretsDao extends JpaRepository<Secrets,Integer> {
 
     List<Secrets> findByIsDelOrderByCreateTimeDesc(Integer isDel);
 
+    List<Secrets> findByUserIdAndIsDel(Integer userId,Integer isDel);
+
 }

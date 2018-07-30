@@ -16,7 +16,7 @@ public class ScheduleConfig {
     /*
     * 清除五分钟内没有访问过的session
     * */
-    @Scheduled(fixedDelay = 60*1000*5)
+//    @Scheduled(fixedDelay = 60*1000*5)
     public void sessionClear(){
 
         for (String session : CacheConfig.sessionHeart.keySet()){
