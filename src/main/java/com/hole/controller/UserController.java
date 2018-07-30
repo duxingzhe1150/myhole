@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.text.html.FormSubmitEvent;
-
 /**
  * @Author wangcj
  * @date 2018/5/24 19:27

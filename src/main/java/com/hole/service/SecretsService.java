@@ -44,13 +44,11 @@ public class SecretsService {
 
     public Resp querySecretByUserId(Integer userId){
 
-        List<Secrets> secretsList = new ArrayList<>();
-
         if (userId == null) {
             return Resp.error("400","参数错误");
         }
 
-        secretsList = secretsDao.findByUserIdAndIsDel(userId,WeiXinConfig.IsDel.NO);
+        List<Secrets> secretsList = secretsDao.findByUserIdAndIsDel(userId,WeiXinConfig.IsDel.NO);
 
         return Resp.success(secretsList);
     }
