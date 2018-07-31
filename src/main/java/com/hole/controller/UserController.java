@@ -36,14 +36,14 @@ public class UserController {
         return secretsService.saveSecret(reqData);
     }
 
-    @RequestMapping(path = "mySecrets",method = RequestMethod.GET)
-    public Resp mySecrets(@PathVariable Integer userId){
+    @RequestMapping(path = "mySecrets/{userId}",method = RequestMethod.GET)
+    public Resp mySecrets(@PathVariable("userId") Integer userId){
 
         return secretsService.querySecretByUserId(userId);
     }
 
-    @RequestMapping(path = "queryOneSecret",method = RequestMethod.GET)
-    public Resp queryOneSecret(@PathVariable Integer id){
+    @RequestMapping(path = "queryOneSecret/{id}",method = RequestMethod.GET)
+    public Resp queryOneSecret(@PathVariable("id") Integer id){
 
         return Resp.success(secretsService.queryOneSecretById(id));
     }
@@ -60,8 +60,8 @@ public class UserController {
         return commentsService.addComment(comments);
     }
 
-    @RequestMapping(path = "queryComments",method = RequestMethod.GET)
-    public Resp queryComments(@PathVariable Integer secretId){
+    @RequestMapping(path = "queryComments/{secretId}",method = RequestMethod.GET)
+    public Resp queryComments(@PathVariable("secretId") Integer secretId){
 
         return commentsService.queryCommentsBySecretId(secretId);
     }
